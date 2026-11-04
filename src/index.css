@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-100 text-forest-900 antialiased leading-normal;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply leading-[1.2];
+  }
+}
+
+@layer utilities {
+  .skeleton {
+    background: linear-gradient(90deg, #efe6d3 25%, #f7f2e7 50%, #efe6d3 75%);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
